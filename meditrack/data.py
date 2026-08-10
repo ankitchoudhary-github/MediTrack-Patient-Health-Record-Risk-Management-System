@@ -1,3 +1,11 @@
+# **Task:** Create `meditrack/data.py`. In it, build a list called `PATIENTS`
+#   containing **at least 3** patient dictionaries. Each patient must have these keys:
+#   - `id` (str), `name` (str), `dob` (str `"YYYY-MM-DD"`), `gender` (str)
+#   - `blood_group` (str), `allergies` (a **set**)
+#   - `vitals` (a **nested dict** with `height_cm`, `weight_kg`, `systolic`,
+#     `diastolic`, `heart_rate`, `temperature_c`)
+#   - `visits` (a **list of tuples**)
+
 PATIENTS = [
     {
         "id": "PAT-1001-4821",
@@ -58,3 +66,32 @@ PATIENTS = [
         ],
     },
 ]
+
+
+# In `data.py`, add a **nested** `HOSPITAL` dict: a name plus a
+#   `departments` list, where each department can have its own `sub` list of
+#   departments
+
+HOSPITAL = {
+    "name": "MediTrack General Hospital",
+    "departments": [
+        {
+            "name": "Internal Medicine",
+            "sub": [
+                {"name": "Cardiology", "sub": []},
+                {"name": "Endocrinology", "sub": []},
+            ],
+        },
+        {
+            "name": "Surgery",
+            "sub": [
+                {"name": "Orthopedics", "sub": []},
+                {
+                    "name": "Neurosurgery",
+                    "sub": [{"name": "Spine Unit", "sub": []}],
+                },
+            ],
+        },
+        {"name": "Pediatrics", "sub": []},
+    ],
+}
