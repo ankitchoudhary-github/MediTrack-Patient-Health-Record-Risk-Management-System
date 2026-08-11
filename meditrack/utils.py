@@ -95,7 +95,15 @@ def clear_screen():
     pass
 
 def divider(title=""):
-    pass
+    line = "=" * 52          
+    if title:
+        return f"{line}\n  {title.upper()}\n{line}"
+    return line
+
+
+# ------------------------------------------------------------------ #
+#  Presentation helpers (Class 07 strings, Class 13 functions)
+# ------------------------------------------------------------------ #
 
 
 
@@ -104,13 +112,10 @@ def divider(title=""):
 
 
 
-
-
-
-
-# print(clean_name("   john   DOE "))
-# print(is_valid_blood_group('o-'))
-# print(generate_patient_id())
-# print(type(today_str()))
-# print(calculate_age('2000-08-04'))
-# print(clean_name("   john   DOE "))
+if __name__ == '__main__':
+    print(clean_name("   john   DOE "))
+    print(is_valid_blood_group('o-'))
+    print(generate_patient_id())
+    print(type(today_str()))
+    print(calculate_age('2000-08-04'))
+    print(clean_name("   john   DOE "))

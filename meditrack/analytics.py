@@ -2,7 +2,7 @@
 #   `from . import vitals`. Write `high_risk_patients(patients, threshold=60)`
 #   using `filter` + a `lambda` that keeps patients whose `risk_score` ≥ threshold.
 
-# from . import vitals
+from . import vitals
 from functools import reduce
 
 def high_risk_patients(patients, threshold=60):
