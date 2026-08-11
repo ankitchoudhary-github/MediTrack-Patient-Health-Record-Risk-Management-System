@@ -91,3 +91,35 @@ def all_allergies():
     for patient in data.PATIENTS:
         combined |= patient["allergies"]
     return combined
+
+
+def add_patient(name, dob, gender, blood_group, *allergies, **extra):
+    """Create a patient record and store it.
+
+    Shows EVERY parameter kind
+    - name, dob, gender, blood_group : positional/keyword
+    - *allergies                     : arbitrary positional args -> tuple -> set
+    - **extra                        : arbitrary keyword args -> dict
+    """
+    if not utils.is_valid_blood_group(blood_group):
+        raise ValueError(f"Invalid blood group: {blood_group}")
+
+    patient = {
+        "id": utils.generate_patient_id(),
+        "name": utils.clean_name(name),
+        "dob": dob,
+        "gender": gender.upper(),
+        "blood_group": blood_group.strip().upper(),
+        "allergies": set(a.lower() for a in allergies),
+        "vitals": {
+            "height_cm": extra.get("height_cm", 0.0),
+            "weight_kg": extra.get("weight_kg", 0.0),
+            "systolic": extra.get("systolic", 120),
+            "diastolic": extra.get("diastolic", 80),
+            "heart_rate": extra.get("heart_rate", 72),
+            "temperature_c": extra.get("temperature_c", 36.6),
+        },
+        "visits": [],
+    }
+    data.PATIENTS.append(patient)
+    return patient
