@@ -92,7 +92,10 @@ def next_appointment_slots(start_hour=9, count=4, gap_minutes=30):
         yield slot.strftime("%I:%M %p")
 
 def clear_screen():
-    pass
+    if sys.platform.startswith("win"):
+        os.system("cls")
+    else:
+        os.system("clear")
 
 def divider(title=""):
     line = "=" * 52          
@@ -112,10 +115,10 @@ def divider(title=""):
 
 
 
-if __name__ == '__main__':
-    print(clean_name("   john   DOE "))
-    print(is_valid_blood_group('o-'))
-    print(generate_patient_id())
-    print(type(today_str()))
-    print(calculate_age('2000-08-04'))
-    print(clean_name("   john   DOE "))
+# if __name__ == '__main__':
+#     print(clean_name("   john   DOE "))
+#     print(is_valid_blood_group('o-'))
+#     print(generate_patient_id())
+#     print(type(today_str()))
+#     print(calculate_age('2000-08-04'))
+#     print(clean_name("   john   DOE "))

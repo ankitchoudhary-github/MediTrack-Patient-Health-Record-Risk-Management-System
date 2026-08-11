@@ -132,27 +132,27 @@ def risk_label(score):
 # ==========================================================================================================================================
 
 
-if __name__ == '__main__':
-    patient = {
-            "id": "PAT-1001-4821",
-            "name": "Aarav Sharma",
-            "dob": "1990-05-14",
-            "gender": "M",
-            "blood_group": "O+",
-            "allergies": {"penicillin", "dust"},          # set
-            "vitals": {                                    # nested dict
-                "height_cm": 175.0,
-                "weight_kg": 82.0,
-                "systolic": 128,
-                "diastolic": 84,
-                "heart_rate": 78,
-                "temperature_c": 37.0,
-            },
-            "visits": [                                    # list of tuples
-                ("2026-06-10", "Routine checkup"),
-                ("2026-07-02", "Fever"),
-            ],
-        }
+# if __name__ == '__main__':
+#     patient = {
+#             "id": "PAT-1001-4821",
+#             "name": "Aarav Sharma",
+#             "dob": "1990-05-14",
+#             "gender": "M",
+#             "blood_group": "O+",
+#             "allergies": {"penicillin", "dust"},          # set
+#             "vitals": {                                    # nested dict
+#                 "height_cm": 175.0,
+#                 "weight_kg": 82.0,
+#                 "systolic": 128,
+#                 "diastolic": 84,
+#                 "heart_rate": 78,
+#                 "temperature_c": 37.0,
+#             },
+#             "visits": [                                    # list of tuples
+#                 ("2026-06-10", "Routine checkup"),
+#                 ("2026-07-02", "Fever"),
+#             ],
+#         }
 
 
-    print(risk_score(patient))
+#     print(risk_score(patient))
